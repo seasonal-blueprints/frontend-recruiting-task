@@ -1,31 +1,47 @@
 {
-  "name": "react-app-template",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "recruitment-assignment",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "axios": "^0.19.0",
+        "moment": "^2.24.0",
+        "prop-types": "^15.7.2",
+        "query-string": "^6.8.2",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-modal": "^3.9.1",
+        "react-router-dom": "^5.0.1",
+        "react-scripts": "3.0.1"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "test:coverage": "npm test -- --coverage --watchAll=false",
+        "test:all": "CI=true npm test src && npm run cy:run",
+        "eject": "react-scripts eject",
+        "cy:open": "cypress open",
+        "cy:verify": "cypress verify",
+        "cy:run": "cypress run"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@testing-library/dom": "^5.2.0",
+        "@testing-library/jest-dom": "^4.0.0",
+        "@testing-library/react": "^8.0.5",
+        "cypress": "^3.4.0",
+        "eslint-plugin-cypress": "^2.6.0",
+        "faker": "^4.1.0"
+    }
 }
