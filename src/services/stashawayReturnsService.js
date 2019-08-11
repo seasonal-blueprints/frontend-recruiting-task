@@ -1,6 +1,7 @@
 let portfolioReturns = [
   {
     id: "1 month",
+    currency: "SGD",
     data: [
       { x: "Jul01", y: 100000 },
       { x: "Jul05", y: 140000 },
@@ -12,7 +13,21 @@ let portfolioReturns = [
     ]
   },
   {
+    id: "1 month",
+    currency: "USD",
+    data: [
+      { x: "Jul01", y: 100000 / 1.2 },
+      { x: "Jul05", y: 140000 / 1.2 },
+      { x: "Jul10", y: 125000 / 1.2 },
+      { x: "Jul15", y: 185000 / 1.2 },
+      { x: "Jul20", y: 220000 / 1.2 },
+      { x: "Jul25", y: 265000 / 1.2 },
+      { x: "Jul30", y: 295000 / 1.2 }
+    ]
+  },
+  {
     id: "6 months",
+    currency: "SGD",
     data: [
       { x: "Jun", y: 100000 },
       { x: "Jul", y: 160000 },
@@ -22,15 +37,66 @@ let portfolioReturns = [
       { x: "Nov", y: 270000 },
       { x: "Dec", y: 275000 }
     ]
+  },
+  {
+    id: "6 months",
+    currency: "USD",
+    data: [
+      { x: "Jun", y: 100000 / 1.2 },
+      { x: "Jul", y: 160000 / 1.2 },
+      { x: "Aug", y: 225000 / 1.2 },
+      { x: "Sept", y: 220000 / 1.2 },
+      { x: "Oct", y: 255000 / 1.2 },
+      { x: "Nov", y: 270000 / 1.2 },
+      { x: "Dec", y: 275000 / 1.2 }
+    ]
   }
 ];
 
-export function getStashawayReturns(id) {
-  if (!id) {
+// export function getStashawayReturns(period, currency) {
+//   if (!period) {
+//     if (!currency) {
+//       return [];
+//     } else {
+//       return portfolioReturns.find(
+//         investmentReturns => investmentReturns.currency === currency
+//       ).data;
+//     }
+//   } else {
+//     if (!currency) {
+//       return portfolioReturns.find(
+//         investmentReturns => investmentReturns.id === period
+//       ).data;
+//     } else {
+//       return portfolioReturns
+//         .find(investmentReturns => investmentReturns.id === period)
+//         .find(investmentReturns => investmentReturns.currency === currency)
+//         .data;
+//     }
+//   }
+// }
+
+export function getStashawayReturns(period, currency) {
+  if (!period && !currency) {
+    return [];
+  }
+  if (!period && currency) {
     return portfolioReturns.find(
-      investmentReturns => investmentReturns.id === "1 month"
+      investmentReturns => investmentReturns.currency === currency
     ).data;
   }
-  return portfolioReturns.find(investmentReturns => investmentReturns.id === id)
-    .data;
+  if (period && !currency) {
+    return portfolioReturns.find(
+      investmentReturns => investmentReturns.id === period
+    ).data;
+  }
+  const a = portfolioReturns.filter(
+    investmentReturns => investmentReturns.id === period
+  );
+  console.log("a", a);
+  const b = a.find(
+    investmentReturns => investmentReturns.currency === currency
+  );
+  console.log("b", b);
+  return b.data;
 }
