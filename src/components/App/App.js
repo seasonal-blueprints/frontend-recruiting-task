@@ -5,6 +5,7 @@ import { getStashawayReturns } from "../../services/stashawayReturnsService";
 import { getMarketReturns } from "../../services/marketReturnsService";
 import PeriodBar from "../periodBar/periodBar";
 import CurrencyBar from "../currencyBar/currencyBar";
+import Benchmark from "../benchmark/benchmark";
 
 import {
   VictoryChart,
@@ -62,6 +63,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>recruitment assignment</h1>
+        <Benchmark />
         <PeriodBar
           selectedPeriod={this.state.selectedPeriod}
           periods={this.state.periods}
