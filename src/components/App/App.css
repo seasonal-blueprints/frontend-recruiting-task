@@ -33,7 +33,8 @@
 }
 
 .chart {
-  margin-left: 400px;
-  width:500px;
-  height: 300px;
+  margin-left: 10%;
+  width: 700px;
+  /* height: 300px; */
+  padding: 50px;
 }
