@@ -11,7 +11,7 @@ const PeriodBar = ({ selectedPeriod, periods, handleSelectPeriod }) => {
       {periods.map(period => {
         return (
           <button
-            id={period.name}
+            id={period._id}
             key={period._id}
             type="button"
             className={getClass(selectedPeriod, period)}
