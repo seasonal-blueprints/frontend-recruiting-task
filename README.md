@@ -2,5 +2,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ##  PURPOSE
 
+Stashaway frontend recruitment task by Gaurav Sharma
 
 
