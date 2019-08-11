@@ -1,0 +1,16 @@
+.periodBar__container button{
+    padding: 5px;
+    margin: 5px 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.unselected {
+  color: rgb(70, 196, 138);
+  background: white;
+}
+
+.selected {
+  color: white;
+  background: rgb(70, 196, 136);
+}
