@@ -1,5 +1,5 @@
 body {
-  --offset-from-edge: 70px;
+  --offset-from-edge: 23%;
 }
 
 .top__Navbar {
@@ -40,7 +40,7 @@ body {
   display: flex;
   flex-direction: row;
   text-align: left;
-  margin-left: 62px;
+  margin-left: 22%;
   align-self: flex-end;
   font-size: 0.6rem;
 }

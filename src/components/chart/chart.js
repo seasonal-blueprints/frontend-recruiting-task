@@ -6,7 +6,9 @@ import {
   VictoryAxis,
   VictoryPortal,
   VictoryLabel,
-  VictoryLegend
+  VictoryLegend,
+  VictoryTooltip,
+  VictoryVoronoiContainer
 } from "victory";
 
 const Chart = ({ stashawayReturns, marketReturns }) => {
@@ -14,13 +16,14 @@ const Chart = ({ stashawayReturns, marketReturns }) => {
     <div className="chart">
       <h3>Portfolio value based on gross returns</h3>
       <p>
-        Gross returns and exchange rates as sourced from Bloomberg as of 2nd May
-        2019
+        Gross returns and exchange rates as sourced from Bloomberg as of 2nd
+        May 2019
       </p>
       <VictoryChart
         width={1200}
         height={400}
-        // domainPadding={{x:[0, 30] }}
+        containerComponent={<VictoryVoronoiContainer />}
+        animate={{ duration: 500, easing: "circle" }}
       >
         <VictoryAxis
           style={{
@@ -51,6 +54,8 @@ const Chart = ({ stashawayReturns, marketReturns }) => {
         />
         <VictoryLine
           interpolation="natural"
+          labelComponent={<VictoryTooltip />}
+          labels={datum => datum.y}
           style={{
             data: { stroke: "#11c8ff" },
             parent: { border: "1px solid #ccc" }
@@ -59,6 +64,8 @@ const Chart = ({ stashawayReturns, marketReturns }) => {
         />
         <VictoryLine
           interpolation="natural"
+          labelComponent={<VictoryTooltip />}
+          labels={datum => datum.y}
           style={{
             data: { stroke: "#ffde26" },
             parent: { border: "1px dashed #ccc" }
@@ -87,6 +94,10 @@ const Chart = ({ stashawayReturns, marketReturns }) => {
           ]}
         />
       </VictoryChart>
+      <div className="abbreviation">
+        <p>VTSMX - Vanguard Total Stock Market Index</p>
+        <p>VTSMX - Vanguard Total Bond Market Index</p>
+      </div>
     </div>
   );
 };
