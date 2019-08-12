@@ -14,8 +14,8 @@ const Chart = ({ stashawayReturns, marketReturns }) => {
     <div className="chart">
       <h3>Portfolio value based on gross returns</h3>
       <p>
-        Gross returns and exchange rates as sourced from Bloomberg as of 2nd
-        May 2019
+        Gross returns and exchange rates as sourced from Bloomberg as of 2nd May
+        2019
       </p>
       <VictoryChart
         width={1200}
@@ -42,6 +42,7 @@ const Chart = ({ stashawayReturns, marketReturns }) => {
               <VictoryLabel />
             </VictoryPortal>
           }
+          tickFormat={tick => `${tick.toLocaleString()}`}
           style={{
             axis: { stroke: "none", color: "white" },
             grid: { stroke: "#818e99", strokeWidth: 0.5 },
