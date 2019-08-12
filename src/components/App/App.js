@@ -61,7 +61,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        {/* <h1>recruitment assignment</h1> */}
         <Navbar />
         <Benchmark
           selectedBenchmark={this.state.selectedBenchmark}
