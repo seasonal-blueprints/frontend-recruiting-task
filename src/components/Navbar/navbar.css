@@ -1,33 +1,38 @@
+body {
+  --offset-from-edge: 70px;
+}
+
 .top__Navbar {
   grid-area: 1/1/2/5;
   display: grid;
   grid-template-rows: 1fr 1.25fr 0.25fr;
   grid-template-columns: 1fr 1fr;
   color: white;
-  background: grey;
+  background: rgb(27, 38, 61);
 }
 
 .top__Navbar h3 {
   grid-area: 1/1/2/2;
   text-align: left;
-  margin-left: 50px;
+  margin-left: var(--offset-from-edge);
   align-self: center;
 }
 
 .overview {
   grid-area: 2/1/3/2;
   text-align: left;
-  margin-left: 50px;
-  /* margin-top: 5px; */
+  margin-left: var(--offset-from-edge);
+  margin-top: 3px;
   align-self: flex-start;
+  color: var(--clickables-colour);
 }
 
 .top__Navbar h1 {
   grid-area: 2/1/3/2;
   text-align: left;
-  margin-left: 50px;
+  margin-left: var(--offset-from-edge);
   align-self: flex-end;
-  margin-bottom: 0px;
+  margin-bottom: 14px;
 }
 
 .tabs {
@@ -35,14 +40,14 @@
   display: flex;
   flex-direction: row;
   text-align: left;
-  margin-left: 50px;
+  margin-left: 62px;
   align-self: flex-end;
   font-size: 0.6rem;
 }
 
 .tabs p {
-  padding: 10px 10px 10px 0px;
-  margin: 0px 5px;
+  padding: 8px 0px;
+  margin: 0px 10px;
 }
 
 .navigate {
@@ -51,7 +56,7 @@
   flex-direction: row;
   align-self: center;
   font-size: 0.6rem;
-  margin: auto 50px auto auto;
+  margin: auto var(--offset-from-edge) auto auto;
 }
 
 .navigate p {
@@ -63,11 +68,11 @@
   grid-area: 3/2/4/3;
   text-align: right;
   font-size: 0.6rem;
-  margin-right: 50px;
+  margin-right: var(--offset-from-edge);
   align-self: flex-end;
 }
 
 .active {
-  color: blue;
-  border-bottom: 5px solid blue;
+  color: var(--clickables-colour);
+  border-bottom: 4px solid var(--clickables-colour);
 }
