@@ -1,0 +1,73 @@
+.top__Navbar {
+  grid-area: 1/1/2/5;
+  display: grid;
+  grid-template-rows: 1fr 1.25fr 0.25fr;
+  grid-template-columns: 1fr 1fr;
+  color: white;
+  background: grey;
+}
+
+.top__Navbar h3 {
+  grid-area: 1/1/2/2;
+  text-align: left;
+  margin-left: 50px;
+  align-self: center;
+}
+
+.overview {
+  grid-area: 2/1/3/2;
+  text-align: left;
+  margin-left: 50px;
+  /* margin-top: 5px; */
+  align-self: flex-start;
+}
+
+.top__Navbar h1 {
+  grid-area: 2/1/3/2;
+  text-align: left;
+  margin-left: 50px;
+  align-self: flex-end;
+  margin-bottom: 0px;
+}
+
+.tabs {
+  grid-area: 3/1/4/2;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  margin-left: 50px;
+  align-self: flex-end;
+  font-size: 0.6rem;
+}
+
+.tabs p {
+  padding: 10px 10px 10px 0px;
+  margin: 0px 5px;
+}
+
+.navigate {
+  grid-area: 1/2/2/3;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  font-size: 0.6rem;
+  margin: auto 50px auto auto;
+}
+
+.navigate p {
+  font-size: 0.6rem;
+  padding: 10px;
+}
+
+.moreActionsMenu {
+  grid-area: 3/2/4/3;
+  text-align: right;
+  font-size: 0.6rem;
+  margin-right: 50px;
+  align-self: flex-end;
+}
+
+.active {
+  color: blue;
+  border-bottom: 5px solid blue;
+}

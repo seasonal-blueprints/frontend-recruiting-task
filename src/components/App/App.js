@@ -8,6 +8,7 @@ import CurrencyBar from "../currencyBar/currencyBar";
 import Benchmark from "../benchmark/benchmark";
 import Chart from "../chart/chart";
 import Footer from "../footer/footer";
+import Navbar from "../navbar/navbar";
 
 class App extends React.Component {
   constructor(props) {
@@ -60,7 +61,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>recruitment assignment</h1>
+        {/* <h1>recruitment assignment</h1> */}
+        <Navbar />
         <Benchmark
           selectedBenchmark={this.state.selectedBenchmark}
           handleSelectBenchmark={this.handleSelectBenchmark}
