@@ -16,11 +16,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "test:coverage": "npm test -- --coverage --watchAll=false",
-        "test:all": "CI=true npm test src && npm run cy:run",
-        "eject": "react-scripts eject",
-        "cy:open": "cypress open",
-        "cy:verify": "cypress verify",
-        "cy:run": "cypress run"
+        "eject": "react-scripts eject"
     },
     "browserslist": {
         "production": [
