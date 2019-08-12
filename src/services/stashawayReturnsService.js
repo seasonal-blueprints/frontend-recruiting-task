@@ -53,50 +53,8 @@ let portfolioReturns = [
   }
 ];
 
-// export function getStashawayReturns(period, currency) {
-//   if (!period) {
-//     if (!currency) {
-//       return [];
-//     } else {
-//       return portfolioReturns.find(
-//         investmentReturns => investmentReturns.currency === currency
-//       ).data;
-//     }
-//   } else {
-//     if (!currency) {
-//       return portfolioReturns.find(
-//         investmentReturns => investmentReturns.id === period
-//       ).data;
-//     } else {
-//       return portfolioReturns
-//         .find(investmentReturns => investmentReturns.id === period)
-//         .find(investmentReturns => investmentReturns.currency === currency)
-//         .data;
-//     }
-//   }
-// }
-
 export function getStashawayReturns(period, currency) {
-  if (!period && !currency) {
-    return [];
-  }
-  if (!period && currency) {
-    return portfolioReturns.find(
-      investmentReturns => investmentReturns.currency === currency
-    ).data;
-  }
-  if (period && !currency) {
-    return portfolioReturns.find(
-      investmentReturns => investmentReturns.id === period
-    ).data;
-  }
-  const a = portfolioReturns.filter(
-    investmentReturns => investmentReturns.id === period
-  );
-  console.log("a", a);
-  const b = a.find(
-    investmentReturns => investmentReturns.currency === currency
-  );
-  console.log("b", b);
-  return b.data;
+  return portfolioReturns
+    .filter(investmentReturns => investmentReturns.id === period)
+    .find(investmentReturns => investmentReturns.currency === currency).data;
 }
