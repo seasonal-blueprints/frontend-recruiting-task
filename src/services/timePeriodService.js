@@ -25,15 +25,6 @@ const periods = [
   }
 ];
 
-// const defaultPeriod = {
-//   _id: "5c3430ecfc13ae122d000006",
-//   name: "Max"
-// };
-
 export function getPeriods() {
   return periods;
 }
-
-// export function getDefaultPeriod() {
-//   return defaultPeriod;
-// }
