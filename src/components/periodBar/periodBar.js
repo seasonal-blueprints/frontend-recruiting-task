@@ -13,9 +13,10 @@ const PeriodBar = ({ selectedPeriod, periods, handleSelectPeriod }) => {
           <button
             id={period._id}
             key={period._id}
+            name="selectedPeriod"
             type="button"
             className={getClass(selectedPeriod, period)}
-            onClick={() => handleSelectPeriod(period.name)}
+            onClick={(event) => handleSelectPeriod(event, period.name)}
           >
             {period.name}
           </button>

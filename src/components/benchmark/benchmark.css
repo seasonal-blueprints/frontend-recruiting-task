@@ -1,0 +1,8 @@
+.benchmark__container {
+  display: flex;
+}
+
+.benchmark__container h2 {
+  align-self: flex-start;
+  margin-left: 50px;
+}

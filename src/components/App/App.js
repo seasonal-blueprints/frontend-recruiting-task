@@ -10,7 +10,6 @@ import Benchmark from "../benchmark/benchmark";
 import {
   VictoryChart,
   VictoryLine,
-  // VictoryTheme,
   VictoryAxis,
   VictoryPortal,
   VictoryLabel
@@ -23,14 +22,22 @@ class App extends React.Component {
       periods: [],
       selectedPeriod: "1 month",
       selectedCurrency: "SGD",
+      selectedBenchmark: "",
       stashawayReturns: [],
       marketReturns: []
     };
   }
 
-  updateReturns = (period, currency) => {
-    const newStashawayReturns = getStashawayReturns(period, currency);
-    const newMarketReturns = getMarketReturns(period, currency);
+  updateReturns = () => {
+    const newStashawayReturns = getStashawayReturns(
+      this.state.selectedPeriod,
+      this.state.selectedCurrency
+    );
+    const newMarketReturns = getMarketReturns(
+      this.state.selectedPeriod,
+      this.state.selectedCurrency,
+      this.state.selectedBenchmark
+    );
     this.setState({
       stashawayReturns: newStashawayReturns,
       marketReturns: newMarketReturns
@@ -40,22 +47,19 @@ class App extends React.Component {
   componentDidMount() {
     const newPeriods = getPeriods();
     this.setState({ periods: newPeriods }, () => {
-      this.updateReturns(
-        this.state.selectedPeriod,
-        this.state.selectedCurrency
-      );
+      this.updateReturns();
     });
   }
 
-  handleSelectPeriod = periodName => {
-    this.setState({ selectedPeriod: periodName }, () => {
-      this.updateReturns(periodName, this.state.selectedCurrency);
+  handleSelectOption = (event, option) => {
+    this.setState({ [event.target.name]: option }, () => {
+      this.updateReturns();
     });
   };
 
-  handleSelectCurrency = currency => {
-    this.setState({ selectedCurrency: currency }, () => {
-      this.updateReturns(this.state.selectedPeriod, currency);
+  handleSelectBenchmark = event => {
+    this.setState({ selectedBenchmark: event.target.value }, () => {
+      this.updateReturns();
     });
   };
 
@@ -63,33 +67,34 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>recruitment assignment</h1>
-        <Benchmark />
+        <Benchmark
+          selectedBenchmark={this.state.selectedBenchmark}
+          handleSelectBenchmark={this.handleSelectBenchmark}
+        />
         <PeriodBar
           selectedPeriod={this.state.selectedPeriod}
           periods={this.state.periods}
-          handleSelectPeriod={this.handleSelectPeriod}
+          handleSelectPeriod={this.handleSelectOption}
         />
         <CurrencyBar
           selectedCurrency={this.state.selectedCurrency}
-          handleSelectCurrency={this.handleSelectCurrency}
+          handleSelectCurrency={this.handleSelectOption}
         />
         <div className="chart">
-          <VictoryChart
-            // theme={VictoryTheme.material}
-            width={700}
-            height={350}
-            // style={{ parent: { maxWidth: "90%" } }}
-          >
+          <VictoryChart width={700} height={350}>
             <VictoryAxis
-              // tickValues={(1, 2, 3, 4, 5, 6, 7)}
               label="Time"
               style={{
                 axisLabel: { marginTop: 35 }
               }}
+              tickLabelComponent={
+                <VictoryPortal>
+                  <VictoryLabel />
+                </VictoryPortal>
+              }
             />
             <VictoryAxis
               dependentAxis
-              // theme={VictoryTheme.material}
               tickLabelComponent={
                 <VictoryPortal>
                   <VictoryLabel />

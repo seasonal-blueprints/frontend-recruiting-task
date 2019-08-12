@@ -16,9 +16,10 @@ const CurrecyBar = ({ selectedCurrency, handleSelectCurrency }) => {
           <button
             id={investment.currency}
             key={investment.currency}
+            name="selectedCurrency"
             type="button"
             className={getClass(selectedCurrency, investment.currency)}
-            onClick={() => handleSelectCurrency(investment.currency)}
+            onClick={(event) => handleSelectCurrency(event, investment.currency)}
           >
             {investment.currency}
           </button>
