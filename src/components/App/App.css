@@ -1,5 +1,16 @@
 .App {
+  display: grid;
   text-align: center;
+  grid-template-columns: 0.25fr 0.75fr 0.75fr 0.25fr;
+  grid-template-rows: 0.5fr 0.5fr 0.15fr 1.5fr 0.25fr;
+}
+
+.App h1 {
+  grid-area: 1/2/2/4;
+}
+
+.App footer {
+  grid-area: 5/1/6/5;
 }
 
 .App-logo {

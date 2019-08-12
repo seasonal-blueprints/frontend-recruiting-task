@@ -1,6 +1,17 @@
-button:focus { outline: none; }
+button:focus {
+  outline: none;
+}
+
+.periodBar__container {
+  grid-area: 3/2/4/3;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+}
 
 .periodBar__container button {
+  align-self: left;
   padding: 5px;
   margin: 5px 10px;
   border: none;

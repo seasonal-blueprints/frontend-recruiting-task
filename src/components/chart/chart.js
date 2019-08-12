@@ -14,19 +14,19 @@ const Chart = ({ stashawayReturns, marketReturns }) => {
     <div className="chart">
       <h3>Portfolio value based on gross returns</h3>
       <p>
-        Gross returns and exchange rates as sourced from Bloomberg as of 2nd May
-        2019
+        Gross returns and exchange rates as sourced from Bloomberg as of 2nd
+        May 2019
       </p>
       <VictoryChart
-        width={700}
-        height={350}
-        // domainPadding={{ x: [50, 0] }}
+        width={1200}
+        height={400}
+        // domainPadding={{x:[0, 30] }}
       >
         <VictoryAxis
           style={{
-            axisLabel: { marginTop: 35, color: "white" },
+            axisLabel: { color: "white" },
             ticks: { stroke: "white", size: 5 },
-            tickLabels: { fontSize: 10, padding: 5, fill: "white" }
+            tickLabels: { fontSize: 15, padding: 5, fill: "white" }
           }}
           tickLabelComponent={
             <VictoryPortal>
@@ -45,7 +45,7 @@ const Chart = ({ stashawayReturns, marketReturns }) => {
           style={{
             axis: { stroke: "none", color: "white" },
             grid: { stroke: "#818e99", strokeWidth: 0.5 },
-            tickLabels: { fontSize: 10, padding: 20, fill: "white" }
+            tickLabels: { fontSize: 15, padding: 30, fill: "white" }
           }}
         />
         <VictoryLine
@@ -65,20 +65,19 @@ const Chart = ({ stashawayReturns, marketReturns }) => {
           data={marketReturns}
         />
         <VictoryLegend
-          x={150}
-          y={330}
+          x={300}
+          y={375}
           centerTitle
           orientation="horizontal"
           gutter={50}
           style={{
             border: { stroke: "none" },
-            labels: { fontSize: 10, fill: "white" },
-            stroke: "white"
+            labels: { fontSize: 15, fill: "white" }
           }}
           data={[
             {
               name: "Stashaway Risk Index 14%",
-              symbol: { fill: "tomato", type: "minus" }
+              symbol: { fill: "#11c8ff", type: "minus" }
             },
             {
               name: "40% VTSMX (Stock) + 60% VBMFX (Bond)",
