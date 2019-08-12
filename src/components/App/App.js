@@ -7,6 +7,7 @@ import PeriodBar from "../periodBar/periodBar";
 import CurrencyBar from "../currencyBar/currencyBar";
 import Benchmark from "../benchmark/benchmark";
 import Chart from "../chart/chart";
+import Footer from "../footer/footer";
 
 class App extends React.Component {
   constructor(props) {
@@ -77,6 +78,7 @@ class App extends React.Component {
           stashawayReturns={this.state.stashawayReturns}
           marketReturns={this.state.marketReturns}
         />
+        <Footer />
       </div>
     );
   }
