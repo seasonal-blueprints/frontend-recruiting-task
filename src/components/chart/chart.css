@@ -1,0 +1,19 @@
+.chart {
+  margin-left: 25%;
+  width: 700px;
+  /* height: 300px; */
+  padding: 20px;
+  background: rgb(23, 28, 39);
+  border-radius: 10px;
+  text-align: left;
+}
+
+.chart h3 {
+  color: white;
+  font-size: 1rem;
+}
+
+.chart p {
+  color: white;
+  font-size: 0.7rem;
+}

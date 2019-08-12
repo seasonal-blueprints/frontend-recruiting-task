@@ -5,4 +5,5 @@
   border-radius: 4px;
   -webkit-user-select: none; /* Chrome/Safari */
   -moz-user-select: none; /* Firefox */
+  cursor: pointer;
 }

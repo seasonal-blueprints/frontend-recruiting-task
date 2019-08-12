@@ -7,11 +7,17 @@ button:focus { outline: none; }
   border-radius: 4px;
   -webkit-user-select: none; /* Chrome/Safari */
   -moz-user-select: none; /* Firefox */
+  cursor: pointer;
 }
 
 .unselected {
   color: rgb(70, 196, 138);
   background: white;
+}
+
+.unselected:hover {
+  color: rgb(70, 196, 138);
+  background: rgb(212, 255, 225);
 }
 
 .selected {
