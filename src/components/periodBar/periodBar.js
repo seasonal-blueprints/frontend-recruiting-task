@@ -1,5 +1,5 @@
 import React from "react";
-import "./periodBar.css";
+import "./PeriodBar.css";
 
 const PeriodBar = ({ selectedPeriod, periods, handleSelectPeriod }) => {
   const getClass = (periodName, period) => {
@@ -16,7 +16,7 @@ const PeriodBar = ({ selectedPeriod, periods, handleSelectPeriod }) => {
             name="selectedPeriod"
             type="button"
             className={getClass(selectedPeriod, period)}
-            onClick={(event) => handleSelectPeriod(event, period.name)}
+            onClick={event => handleSelectPeriod(event, period.name)}
           >
             {period.name}
           </button>

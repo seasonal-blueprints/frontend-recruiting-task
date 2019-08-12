@@ -1,5 +1,5 @@
 import React from "react";
-import "./benchmark.css";
+import "./Benchmark.css";
 
 const Benchmark = ({ selectedBenchmark, handleSelectBenchmark }) => {
   return (

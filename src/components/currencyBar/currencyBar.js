@@ -1,6 +1,5 @@
 import React from "react";
-// import "../periodBar/periodBar.css";
-import "../currencyBar/currencyBar.css";
+import "./CurrencyBar.css";
 
 const currencies = [{ currency: "SGD" }, { currency: "USD" }];
 

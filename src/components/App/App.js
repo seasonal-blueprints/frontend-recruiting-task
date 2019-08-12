@@ -1,14 +1,14 @@
 import React from "react";
-import "./app.css";
+import "./App.css";
 import { getPeriods } from "../../services/timePeriodService";
 import { getStashawayReturns } from "../../services/stashawayReturnsService";
 import { getMarketReturns } from "../../services/marketReturnsService";
-import PeriodBar from "../periodBar/periodBar";
-import CurrencyBar from "../currencyBar/currencyBar";
-import Benchmark from "../benchmark/benchmark";
-import Chart from "../chart/chart";
-import Footer from "../footer/footer";
-import Navbar from "../navbar/navbar";
+import PeriodBar from "../PeriodBar/PeriodBar";
+import CurrencyBar from "../CurrencyBar/CurrencyBar";
+import Benchmark from "../Benchmark/Benchmark";
+import Chart from "../Chart/Chart";
+import Footer from "../Footer/Footer";
+import Navbar from "../Navbar/Navbar";
 
 class App extends React.Component {
   constructor(props) {
